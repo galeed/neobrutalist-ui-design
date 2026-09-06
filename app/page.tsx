@@ -1,13 +1,15 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CalendarDays, Instagram, Linkedin, Menu, MessageSquare, Twitter, Users, Youtube } from "lucide-react"
-import StudioSelector from "@/components/studio-selector"
 import SocialWorkspace from "@/components/social-workspace"
 import InternalInbox from "@/components/internal-inbox"
 import PersonalProfile from "@/components/personal-profile"
 import NotificationsCenter from "@/components/notifications-center"
 import MobileBottomNav from "@/components/mobile-bottom-nav"
 import MobileNavigation from "@/components/mobile-navigation"
+import ContactsPanel from "@/components/contacts-panel"
+import ActivityAnalytics from "@/components/activity-analytics"
+import ContentStudioDashboard from "@/components/content-studio-dashboard"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default function Dashboard() {
@@ -56,8 +58,11 @@ export default function Dashboard() {
               <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 bg-black text-white rounded-xl">
                 Dashboard
               </Link>
-              <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
+              <Link href="#analytics" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
                 Analytics
+              </Link>
+              <Link href="#contacts" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
+                Contacts
               </Link>
               <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
                 Calendar
@@ -105,6 +110,9 @@ export default function Dashboard() {
             <PersonalProfile />
             <NotificationsCenter />
             <InternalInbox />
+            <ContactsPanel />
+            <ActivityAnalytics />
+            <ContentStudioDashboard />
 
             <div className="mb-10 grid gap-4 lg:grid-cols-2">
               <section id="calendar" className="rounded-2xl border-4 border-black bg-white p-5 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]">
@@ -114,10 +122,6 @@ export default function Dashboard() {
               <section className="rounded-2xl border-4 border-black bg-black p-5 text-white shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]"><div className="mb-5 flex items-start justify-between"><div><p className="text-xs font-black uppercase tracking-[0.18em] text-white/60">This week</p><h2 className="text-2xl font-black">AUDIENCE PULSE</h2></div><Users className="size-7" /></div><div className="grid grid-cols-2 gap-3 sm:grid-cols-4">{[["+12.8%", "Growth"], ["8.4%", "Engagement"], ["18:30", "Best time"], ["Reels", "Top format"]].map(([value, label]) => <div key={label} className="rounded-xl border-2 border-white/40 bg-white/10 p-3"><p className="text-xl font-black text-lime-300">{value}</p><p className="text-xs text-white/70">{label}</p></div>)}</div><p className="mt-5 text-sm text-white/70">Tu comunidad responde mejor a contenido breve y cercano durante la tarde.</p></section>
             </div>
 
-            <div>
-              <h2 className="text-xl sm:text-2xl font-black mb-4">CONTENT STUDIO</h2>
-              <StudioSelector />
-            </div>
           </div>
         </div>
       </div>
