@@ -7,6 +7,7 @@ import ContentCreator from "@/components/content-creator"
 import StudioSelector from "@/components/studio-selector"
 import SocialWorkspace from "@/components/social-workspace"
 import MobileNavigation from "@/components/mobile-navigation"
+import { AppNavigation } from "@/components/app-navigation"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default function Dashboard() {
@@ -48,6 +49,8 @@ export default function Dashboard() {
         <div className="grid md:grid-cols-[280px_1fr] h-[calc(100vh-6rem)]">
           {/* Sidebar - Desktop only */}
           <div className="hidden md:block border-r-4 border-black bg-white/40 p-4">
+            <AppNavigation />
+            <div className="my-6 border-t-2 border-current" />
             <nav className="space-y-2">
               <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 bg-black text-white rounded-xl">
                 Dashboard
@@ -95,7 +98,15 @@ export default function Dashboard() {
           </div>
 
           {/* Main content */}
-          <div className="overflow-auto p-4 sm:p-6">
+          <div className="overflow-auto p-4 pb-24 sm:p-6 sm:pb-24">
+            <section className="mb-8 rounded-2xl border-4 border-current bg-card p-5 shadow-[6px_6px_0px_0px_currentColor]">
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-muted-foreground">Resumen del perfil</p>
+              <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
+                <div><h2 className="text-3xl font-black">@yourbrand</h2><p className="mt-1 text-muted-foreground">Tu centro de mando para crear, conectar y publicar.</p></div>
+                <Button asChild variant="outline" className="rounded-xl border-2 border-current font-bold"><Link href="/profile">Editar perfil</Link></Button>
+              </div>
+              <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4"><div className="rounded-xl border-2 border-current bg-background p-3"><strong className="block text-2xl font-black">3</strong><span className="text-xs font-bold uppercase">Cuentas</span></div><div className="rounded-xl border-2 border-current bg-background p-3"><strong className="block text-2xl font-black">12</strong><span className="text-xs font-bold uppercase">Borradores</span></div><div className="rounded-xl border-2 border-current bg-background p-3"><strong className="block text-2xl font-black">4</strong><span className="text-xs font-bold uppercase">Proyectos</span></div><div className="rounded-xl border-2 border-current bg-background p-3"><strong className="block text-2xl font-black">82%</strong><span className="text-xs font-bold uppercase">Perfil listo</span></div></div>
+            </section>
             <SocialWorkspace />
             <div className="my-10 border-t-4 border-black" />
             <div className="mb-8">
@@ -168,6 +179,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      <AppNavigation mobile />
     </div>
   )
 }
