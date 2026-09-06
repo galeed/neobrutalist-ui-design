@@ -38,11 +38,8 @@ export default function Dashboard() {
               <Button className="bg-black hover:bg-black/80 text-white rounded-xl border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                 Connect Account
               </Button>
-              <Button
-                variant="outline"
-                className="rounded-xl border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-              >
-                Settings
+              <Button asChild variant="outline" className="rounded-xl border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <Link href="/settings">Configuraciones</Link>
               </Button>
             </div>
           </div>
