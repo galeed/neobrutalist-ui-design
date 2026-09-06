@@ -9,7 +9,7 @@ export default function StudioSelector() {
     {
       type: "audio",
       name: "Audio Studio",
-      description: "Mix, master, and edit audio content with AI assistance",
+      description: "Masterización profesional, mixer, efectos y AI Coach para WAV/FLAC",
       icon: <Music className="h-8 w-8 sm:h-10 sm:w-10" />,
       color: "bg-gradient-to-br from-pink-500 to-orange-500",
       href: "/studio/audio",
