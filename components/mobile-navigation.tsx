@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Bell, Instagram, Linkedin, MessageSquare, Twitter, UserRound, Youtube } from "lucide-react"
+import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react"
 
 export default function MobileNavigation() {
   return (
@@ -10,22 +10,19 @@ export default function MobileNavigation() {
       </div>
 
       <div className="flex-1 overflow-auto p-4">
-        <nav className="mb-8 space-y-2">
-          <p className="px-3 pb-1 text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">Overview</p>
-          <Link href="#top" className="flex items-center gap-2 rounded-xl bg-black p-3 text-lg font-bold text-white">Dashboard</Link>
-          <p className="px-3 pb-1 pt-4 text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">Plan & create</p>
-          <Link href="#calendar" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Calendar</Link>
-          <Link href="#content-studio" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Content Studio</Link>
-          <p className="px-3 pb-1 pt-4 text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">Community</p>
-          <Link href="#contacts" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Contacts</Link>
-          <Link href="#inbox" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
-            <MessageSquare className="size-5" /> Messages
+        <nav className="space-y-2 mb-8">
+          <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 bg-black text-white rounded-xl">
+            Dashboard
           </Link>
-          <p className="px-3 pb-1 pt-4 text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">Insights & settings</p>
-          <Link href="#analytics" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Analytics</Link>
-          <Link href="#notifications" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl"><Bell className="size-5" /> Notifications</Link>
-          <Link href="#profile" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl"><UserRound className="size-5" /> Profile</Link>
-          <Link href="#accessibility" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Settings</Link>
+          <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
+            Analytics
+          </Link>
+          <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
+            Calendar
+          </Link>
+          <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
+            Messages
+          </Link>
         </nav>
 
         <div>
