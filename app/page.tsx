@@ -5,6 +5,7 @@ import { Instagram, Linkedin, Menu, Plus, Twitter, Youtube } from "lucide-react"
 import SocialMediaCard from "@/components/social-media-card"
 import ContentCreator from "@/components/content-creator"
 import StudioSelector from "@/components/studio-selector"
+import SocialWorkspace from "@/components/social-workspace"
 import MobileNavigation from "@/components/mobile-navigation"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
@@ -98,6 +99,8 @@ export default function Dashboard() {
 
           {/* Main content */}
           <div className="overflow-auto p-4 sm:p-6">
+            <SocialWorkspace />
+            <div className="my-10 border-t-4 border-black" />
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-black mb-4">CONNECTED ACCOUNTS</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
