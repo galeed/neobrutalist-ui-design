@@ -4,12 +4,15 @@ import { CalendarDays, Instagram, Linkedin, Menu, MessageSquare, Twitter, Users,
 import StudioSelector from "@/components/studio-selector"
 import SocialWorkspace from "@/components/social-workspace"
 import InternalInbox from "@/components/internal-inbox"
+import PersonalProfile from "@/components/personal-profile"
+import NotificationsCenter from "@/components/notifications-center"
+import MobileBottomNav from "@/components/mobile-bottom-nav"
 import MobileNavigation from "@/components/mobile-navigation"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-2 sm:p-4 md:p-8">
+    <div id="top" className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-2 pb-24 sm:p-4 sm:pb-24 md:p-8 md:pb-8">
       {/* Glassmorphic container */}
       <div className="w-full max-w-7xl mx-auto backdrop-blur-xl bg-white/30 border-4 border-black rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
         {/* Header */}
@@ -99,10 +102,12 @@ export default function Dashboard() {
           <div className="overflow-auto p-4 sm:p-6">
             <SocialWorkspace />
             <div className="my-10 border-t-4 border-black" />
+            <PersonalProfile />
+            <NotificationsCenter />
             <InternalInbox />
 
             <div className="mb-10 grid gap-4 lg:grid-cols-2">
-              <section className="rounded-2xl border-4 border-black bg-white p-5 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]">
+              <section id="calendar" className="rounded-2xl border-4 border-black bg-white p-5 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]">
                 <div className="mb-5 flex items-start justify-between"><div><p className="text-xs font-black uppercase tracking-[0.18em] text-muted-foreground">Plan ahead</p><h2 className="text-2xl font-black">CONTENT CALENDAR</h2></div><CalendarDays className="size-7" /></div>
                 <div className="space-y-3">{[["TODAY · 18:30", "Behind the scenes", "Instagram + TikTok", "bg-fuchsia-200"], ["THU · 09:00", "Launch notes", "LinkedIn", "bg-cyan-200"], ["SAT · 12:00", "Studio diary #04", "YouTube", "bg-amber-200"]].map(([date, title, channel, tone]) => <div key={title} className={`flex items-center gap-3 rounded-xl border-2 border-black p-3 ${tone}`}><div className="min-w-24 text-xs font-black">{date}</div><div className="min-w-0 flex-1"><p className="truncate font-black">{title}</p><p className="text-xs">{channel}</p></div><span className="rounded-full border-2 border-black bg-white px-2 py-1 text-[10px] font-black">SCHEDULED</span></div>)}</div>
               </section>
@@ -116,6 +121,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      <MobileBottomNav />
     </div>
   )
 }

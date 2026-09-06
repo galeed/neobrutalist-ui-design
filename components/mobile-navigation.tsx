@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react"
+import { Bell, Instagram, Linkedin, MessageSquare, Twitter, UserRound, Youtube } from "lucide-react"
 
 export default function MobileNavigation() {
   return (
@@ -20,8 +20,14 @@ export default function MobileNavigation() {
           <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
             Calendar
           </Link>
-          <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
-            Messages
+          <Link href="#inbox" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
+            <MessageSquare className="size-5" /> Messages
+          </Link>
+          <Link href="#notifications" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
+            <Bell className="size-5" /> Notifications
+          </Link>
+          <Link href="#profile" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
+            <UserRound className="size-5" /> Profile
           </Link>
         </nav>
 
