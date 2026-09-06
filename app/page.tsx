@@ -10,6 +10,9 @@ import MobileNavigation from "@/components/mobile-navigation"
 import ContactsPanel from "@/components/contacts-panel"
 import ActivityAnalytics from "@/components/activity-analytics"
 import ContentStudioDashboard from "@/components/content-studio-dashboard"
+import GettingStarted from "@/components/getting-started"
+import AccessibilityPanel from "@/components/accessibility-panel"
+import UiStatesDemo from "@/components/ui-states-demo"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default function Dashboard() {
@@ -55,18 +58,17 @@ export default function Dashboard() {
           {/* Sidebar - Desktop only */}
           <div className="hidden md:block border-r-4 border-black bg-white/40 p-4">
             <nav className="space-y-2">
-              <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 bg-black text-white rounded-xl">
-                Dashboard
-              </Link>
-              <Link href="#analytics" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
-                Analytics
-              </Link>
-              <Link href="#contacts" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
-                Contacts
-              </Link>
-              <Link href="#" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
-                Calendar
-              </Link>
+              <p className="px-3 pb-1 text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">Overview</p>
+              <Link href="#top" className="flex items-center gap-2 rounded-xl bg-black p-3 text-lg font-bold text-white">Dashboard</Link>
+              <p className="px-3 pb-1 pt-4 text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">Plan & create</p>
+              <Link href="#calendar" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Calendar</Link>
+              <Link href="#content-studio" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Content Studio</Link>
+              <p className="px-3 pb-1 pt-4 text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">Community</p>
+              <Link href="#contacts" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Contacts</Link>
+              <Link href="#inbox" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl"><MessageSquare className="size-5" /> Messages <span className="ml-auto rounded-full bg-lime-300 px-2 py-0.5 text-xs">2</span></Link>
+              <p className="px-3 pb-1 pt-4 text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">Insights & settings</p>
+              <Link href="#analytics" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Analytics</Link>
+              <Link href="#accessibility" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">Settings</Link>
               <Link href="#inbox" className="flex items-center gap-2 text-lg font-bold p-3 hover:bg-black/10 rounded-xl">
                 <MessageSquare className="size-5" /> Messages <span className="ml-auto rounded-full bg-lime-300 px-2 py-0.5 text-xs">2</span>
               </Link>
@@ -106,13 +108,16 @@ export default function Dashboard() {
           {/* Main content */}
           <div className="overflow-auto p-4 sm:p-6">
             <SocialWorkspace />
+            <GettingStarted />
             <div className="my-10 border-t-4 border-black" />
             <PersonalProfile />
             <NotificationsCenter />
             <InternalInbox />
             <ContactsPanel />
             <ActivityAnalytics />
-            <ContentStudioDashboard />
+            <div id="content-studio"><ContentStudioDashboard /></div>
+            <UiStatesDemo />
+            <AccessibilityPanel />
 
             <div className="mb-10 grid gap-4 lg:grid-cols-2">
               <section id="calendar" className="rounded-2xl border-4 border-black bg-white p-5 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]">
