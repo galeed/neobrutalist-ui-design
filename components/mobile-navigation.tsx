@@ -49,8 +49,8 @@ export default function MobileNavigation() {
           <Button className="bg-black hover:bg-black/80 text-white rounded-xl border-2 border-black font-bold">
             Connect
           </Button>
-          <Button variant="outline" className="rounded-xl border-2 border-black font-bold">
-            Settings
+          <Button asChild variant="outline" className="rounded-xl border-2 border-black font-bold">
+            <Link href="/settings">Configuraciones</Link>
           </Button>
         </div>
       </div>
