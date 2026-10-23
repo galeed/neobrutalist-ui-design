@@ -18,7 +18,7 @@ export default function Dashboard() {
         {/* Header */}
         <header className="border-b-4 border-black p-4 sm:p-6 bg-white/40 backdrop-blur-md">
           <div className="flex justify-between items-center gap-4">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">POSTCRAFT</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">MEOW STUDIO</h1>
 
             {/* Mobile menu */}
             <div className="flex md:hidden">
