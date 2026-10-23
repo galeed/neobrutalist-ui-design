@@ -1,33 +1,21 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowLeft, Check, Moon, Palette, Sun, Swords } from "lucide-react"
-import { useEffect, useState } from "react"
+import { ArrowLeft, Check, Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const themes = [
-  { value: "light", label: "Claro", description: "La estética original: limpia, luminosa y neobrutalista.", icon: Sun },
-  { value: "dark", label: "Oscuro", description: "La misma identidad invertida: fondo negro y letras claras.", icon: Moon },
-  { value: "gamer", label: "Gamer", description: "Panel nocturno, neón, glow, grid y glitch para una cabina gamer.", icon: Swords },
-  { value: "oxford", label: "Oxford", description: "Gris Oxford claro y profundo con textura visual mate y elegante.", icon: Palette },
+  { value: "light", label: "Claro", description: "Una interfaz luminosa, limpia y neobrutalista.", icon: Sun },
+  { value: "dark", label: "Oscuro", description: "Una interfaz de alto contraste con fondo oscuro y texto claro.", icon: Moon },
 ]
 
 export default function SettingsPage() {
-  const [theme, setTheme] = useState("light")
-
-  useEffect(() => {
-    const saved = localStorage.getItem("postcraft-theme") || "light"
-    applyTheme(saved)
-  }, [])
+  const { theme, setTheme } = useTheme()
+  const selectedTheme = theme || "light"
 
   function applyTheme(nextTheme: string) {
-    const root = document.documentElement
-    root.classList.remove("dark", "theme-gamer", "theme-oxford")
-    if (nextTheme === "dark") root.classList.add("dark")
-    if (nextTheme === "gamer") root.classList.add("theme-gamer")
-    if (nextTheme === "oxford") root.classList.add("theme-oxford")
-    localStorage.setItem("postcraft-theme", nextTheme)
     setTheme(nextTheme)
   }
 
@@ -50,10 +38,10 @@ export default function SettingsPage() {
           </CardHeader>
           <CardContent className="grid gap-4 sm:grid-cols-2">
             {themes.map(({ value, label, description, icon: Icon }) => (
-              <button key={value} type="button" onClick={() => applyTheme(value)} aria-pressed={theme === value} className={`group flex min-h-44 flex-col items-start justify-between rounded-xl border-4 border-current p-5 text-left transition-transform hover:-translate-y-1 ${theme === value ? "bg-primary text-primary-foreground shadow-[6px_6px_0px_0px_currentColor]" : "bg-background"}`}>
+              <button key={value} type="button" onClick={() => applyTheme(value)} aria-pressed={selectedTheme === value} className={`group flex min-h-44 flex-col items-start justify-between rounded-xl border-4 border-current p-5 text-left transition-transform hover:-translate-y-1 ${selectedTheme === value ? "bg-primary text-primary-foreground shadow-[6px_6px_0px_0px_currentColor]" : "bg-background"}`}>
                 <div className="flex w-full items-center justify-between">
                   <Icon className="size-8" aria-hidden="true" />
-                  {theme === value && <Check className="size-6" aria-label="Seleccionado" />}
+                  {selectedTheme === value && <Check className="size-6" aria-label="Seleccionado" />}
                 </div>
                 <span>
                   <strong className="block text-xl font-black uppercase">{label}</strong>
