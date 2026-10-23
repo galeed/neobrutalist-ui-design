@@ -26,7 +26,7 @@ export default function StudioLayout({
                   <Home className="h-5 w-5" />
                 </Button>
               </Link>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">POSTCRAFT STUDIO</h1>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">MEOW STUDIO</h1>
             </div>
           </div>
         </header>

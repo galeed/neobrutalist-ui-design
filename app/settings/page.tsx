@@ -26,7 +26,7 @@ export default function SettingsPage() {
           <ArrowLeft data-icon="inline-start" /> Volver al dashboard
         </Link>
         <header className="mb-8 border-b-4 border-current pb-6">
-          <p className="mb-2 text-xs font-black uppercase tracking-[0.3em] text-muted-foreground">Postcraft / Ajustes</p>
+          <p className="mb-2 text-xs font-black uppercase tracking-[0.3em] text-muted-foreground">Meow Studio / Ajustes</p>
           <h1 className="text-4xl font-black tracking-tight sm:text-6xl">CONFIGURACIONES</h1>
           <p className="mt-3 max-w-2xl text-muted-foreground">Elige el ambiente visual del espacio de trabajo. El cambio se guarda en este navegador y conserva la estética neobrutalista.</p>
         </header>
